@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <title>loan Prediction</title>
+  </head>
+  <body>
+
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="relative bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+      <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <polygon points="50,0 100,0 50,100 0,100" />
+      </svg>
+
+      <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+        <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
+          <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+            <div class="flex items-center justify-between w-full md:w-auto">
+              <a href="#">
+                <span class="sr-only">Workflow</span>
+                <img class="h-8 w-auto sm:h-10" src="data:image/jpeg;base64,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">
+              </a>
+              <div class="-mr-2 flex items-center md:hidden">
+                <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                  <span class="sr-only">Open main menu</span>
+                  <!-- Heroicon name: outline/menu -->
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Home</a>
+
+            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Prediction</a>
+
+            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">About us</a>
+
+            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">contact</a>
+            
+          </div>
+        </nav>
+      </div>
+
+      <!--
+        Mobile menu, show/hide based on menu open state.
+
+        Entering: "duration-150 ease-out"
+          From: "opacity-0 scale-95"
+          To: "opacity-100 scale-100"
+        Leaving: "duration-100 ease-in"
+          From: "opacity-100 scale-100"
+          To: "opacity-0 scale-95"
+      -->
+        <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+          <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+            <div class="px-5 pt-4 flex items-center justify-between">
+              <div>
+                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
+              </div>
+              <div class="-mr-2">
+                <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <span class="sr-only">Close main menu</span>
+                  <!-- Heroicon name: outline/x -->
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</a>
+
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">prediction</a>
+
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">about us</a>
+
+            <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">contact</a>
+          </div>
+          
+        </div>
+      </div>
+
+      <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+        <div class="sm:text-center lg:text-left">
+          <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+            <span class="block xl:inline">Loan Prediction</span>
+            <span class="block text-indigo-600 xl:inline">Machine Learning WebApp </span>
+          </h1>
+          <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+            Click on Prediction to check your Loan application Prediction.
+          </p>
+          <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+            <div class="rounded-md shadow">
+              <a href="./predict" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                Prediction
+              </a>
+            </div>
+            
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+    <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://futuresoftproject.com/boi/wp-content/uploads/2022/08/african-american-employee-using-headset-customer-service-job-asnwering-call-about-telemarketing-sales-male-operator-working-call-center-office-help-clients-helpline_482257-40794-1000x800.jpg" alt="">
+  </div>
+</div>
+    
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+  </body>
+</html>
+
+
+
